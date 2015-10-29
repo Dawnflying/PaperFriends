@@ -1,5 +1,5 @@
 
-
+import datetime
 from django.db import models
 
 class Question(models.Model):
@@ -25,10 +25,18 @@ class PaperInfo(models.Model):
     src = models.CharField(max_length=200)
     users = models.ManyToManyField(UserInfo)
 
+    def __unicode__(self):
+        return u'%s' % self.title
+
+class TagInfo(models.Model):
+    tagId = models.IntegerField()
+    timestamp = models.DateField(default=datetime.datetime.now())
+    paper = models.ForeignKey(PaperInfo, default='IT')
+
 class Comment(models.Model):
     users = models.ForeignKey(UserInfo)
-    timestamp = models.DateField()
+    timestamp = models.DateField(default=datetime.datetime.now())
     content = models.CharField(max_length=1000)
-    paper = models.ForeignKey(PaperInfo)
+    tag = models.ForeignKey(TagInfo)
         
 # Create your models here.
