@@ -28,7 +28,7 @@ html {
 
 body {
   height: 100%;
-  background-color: #a0a0a0;
+  background-color: #ffffff;
   background-image: url(images/texture.png);
 }
 
@@ -175,7 +175,6 @@ html[dir='rtl'] .innerCenter {
   -webkit-transition-timing-function: ease;
   transition-duration: 200ms;
   transition-timing-function: ease;
-
 }
 html[dir='ltr'] #sidebarContainer {
   -webkit-transition-property: left;
@@ -1552,7 +1551,7 @@ ol ol {
 .rounded-list{
     height: 600px;
     width: 100%;
-    overflow: scroll;
+    overflow-y: scroll;
 }
 
 .rounded-list a{

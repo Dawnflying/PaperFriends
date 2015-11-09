@@ -22,6 +22,7 @@
 var http = require('http');
 var path = require('path');
 var fs = require('fs');
+var urlparser = require('url');
 
 var mimeTypes = {
   '.css': 'text/css',
@@ -67,6 +68,26 @@ WebServer.prototype = {
   },
   _handler: function (req, res) {
     var url = req.url;
+
+    var args = urlparser.parse(url).query;
+
+    console.log('args are ' +args);
+
+    if(args!==null)
+    {
+        var opts ={
+            host:'localhost',
+            port:8000,
+            path:'/paperlink/get_file_info?'+args
+        }
+        req = http.get(opts,function(res){
+            console.log(res);
+            res.on('data',function(data){
+                console.log(data);
+            });
+        });
+    }
+
     var urlParts = /([^?]*)((?:\?(.*))?)/.exec(url);
     var pathPart = decodeURI(urlParts[1]), queryPart = urlParts[3];
     var verbose = this.verbose;
@@ -126,6 +147,7 @@ WebServer.prototype = {
         res.end('Redirected', 'utf8');
         return;
       }
+
       if (isDir) {
         serveDirectoryIndex(filePath);
         return;
@@ -246,7 +268,7 @@ WebServer.prototype = {
       var ext = path.extname(filePath).toLowerCase();
       var contentType = mimeTypes[ext] || defaultMimeType;
 
-      res.setHeader('Accept-Ranges', 'bytes');
+      res.setHeader('Accepet-Ranges', 'bytes');
       res.setHeader('Content-Type', contentType);
       res.setHeader('Content-Length', (end - start));
       res.setHeader('Content-Range',

@@ -49,6 +49,8 @@ PDFJS.cMapPacked = true;
 //PDFJS.cMapPacked = true;
 //#endif
 
+//#include l10n.js
+
 var mozL10n = document.mozL10n || document.webL10n;
 
 //#include ui_utils.js

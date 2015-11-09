@@ -21,6 +21,50 @@
 
 var TEXT_LAYER_RENDER_DELAY = 200; // ms
 
+var XHR = getXMLHttpRequest();
+var Username;
+
+function getNowFormatDate() {
+    var date = new Date();
+    var seperator1 = "-";
+    var seperator2 = ":";
+    var month = date.getMonth() + 1;
+    var strDate = date.getDate();
+    if (month >= 1 && month <= 9) {
+        month = "0" + month;
+    }
+    if (strDate >= 0 && strDate <= 9) {
+        strDate = "0" + strDate;
+    }
+    var currentdate = date.getFullYear() + seperator1 + month + seperator1 + strDate
+        + " " + date.getHours() + seperator2 + date.getMinutes()
+        + seperator2 + date.getSeconds();
+    return currentdate;
+}
+
+function getXMLHttpRequest()
+{
+    if(window.XMLHttpRequest)
+    {
+        return new window.XMLHttpRequest();
+    }
+    else
+    {
+        var progIDs = ['MSXML2.XMLHTTP.5.0', 'MSXML2.XMLHTTP.4.0', 'MSXML2.XMLHTTP.3.0', 'MSXML2.XMLHTTP', 'Microsoft.XMLHTTP'];
+        for(var i = 0; i < progIDs.length;i++)
+        {
+            try{
+                var xmlHttp = new ActiveXObject(progIDs[i]);
+                return xmlHttp;
+            }
+            catch(ex)
+            {
+
+            }
+        }
+        return null;
+    }
+}
 /**
  * @typedef {Object} PDFPageViewOptions
  * @property {HTMLDivElement} container - The viewer element.
@@ -361,6 +405,34 @@ var PDFPageView = (function PDFPageViewClosure() {
       var textLayerDiv = null;
       var textLayer = null;
 
+      var submit = document.getElementById('submit-comment');
+      submit.onclick = function(){
+        var comentText = eval(document.getElementById('comment-text')).value;
+        var time = getNowFormatDate();
+          XHR.open("POST","http://localhost:8000/paperlink/save_comments",true);
+          XHR.setRequestHeader("Content-Type","application/x-www-form-urlencoded; charset=utf-8");
+          XHR.onreadystatechange = function(){httpReqCallback.apply(XHR);};
+          var jsonObj = new Object();
+          jsonObj.timestamp = time;
+          jsonObj.comment = comentText;
+          jsonObj.username = Username;
+          var str = JSON.stringify(jsonObj);
+          XHR.send(str);
+
+      };
+
+        function httpReqCallback()
+        {
+            if(this.readState==200)
+            {
+                alert(this.responseText);
+            }
+            else
+            {
+                alert("返回状体"+this.statusText);
+            }
+        }
+
         for(var i = 0; i < 6; i++)
         {
             var divtag = document.createElement('div');
@@ -408,7 +480,10 @@ var PDFPageView = (function PDFPageViewClosure() {
 
 
             div.appendChild(divtag);
+
+
         }
+
       if (this.textLayerFactory) {
         textLayerDiv = document.createElement('div');
         textLayerDiv.className = 'textLayer';

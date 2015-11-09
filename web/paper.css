@@ -1,0 +1,333 @@
+.bs-example {
+    position: relative;
+    padding: 45px 15px 15px;
+    margin: 0 -15px 15px;
+    background-color: #fafafa;
+    box-shadow: inset 0 3px 6px rgba(0,0,0,.05);
+    border-color: #e5e5e5 #eee #eee;
+    border-style: solid;
+    border-width: 1px 0;
+}
+/* Echo out a label for the example */
+.bs-example:after {
+    content: "Latest Comments";
+    position: absolute;
+    top:  15px;
+    left: 15px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #bbb;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Tweak display of the code snippets when following an example */
+.bs-example + .highlight {
+    margin: -15px -15px 15px;
+    border-radius: 0;
+    border-width: 0 0 1px;
+}
+
+/* Make the examples and snippets not full-width */
+@media (min-width: 768px) {
+    .bs-example {
+        margin-left: 0;
+        margin-right: 0;
+        background-color: #fff;
+        border-width: 1px;
+        border-color: #ddd;
+        border-radius: 4px 4px 0 0;
+        box-shadow: none;
+    }
+    .bs-example + .highlight {
+        margin-top: -16px;
+        margin-left: 0;
+        margin-right: 0;
+        border-width: 1px;
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
+    }
+}
+
+/* Undo width of container */
+.bs-example .container {
+    width: auto;
+}
+
+/* Tweak content of examples for optimum awesome */
+.bs-example > p:last-child,
+.bs-example > ul:last-child,
+.bs-example > ol:last-child,
+.bs-example > blockquote:last-child,
+.bs-example > .form-control:last-child,
+.bs-example > .table:last-child,
+.bs-example > .navbar:last-child,
+.bs-example > .jumbotron:last-child,
+.bs-example > .alert:last-child,
+.bs-example > .panel:last-child,
+.bs-example > .list-group:last-child,
+.bs-example > .well:last-child,
+.bs-example > .progress:last-child,
+.bs-example > .panel-group:last-child,
+.bs-example > .table-responsive:last-child > .table {
+    margin-bottom: 0;
+}
+.bs-example > p > .close {
+    float: none;
+}
+
+/* Typography */
+.bs-example-type .table .info {
+    color: #999;
+    vertical-align: middle;
+}
+.bs-example-type .table td {
+    padding: 15px 0;
+    border-color: #eee;
+}
+.bs-example-type .table tr:first-child td {
+    border-top: 0;
+}
+.bs-example-type h1,
+.bs-example-type h2,
+.bs-example-type h3,
+.bs-example-type h4,
+.bs-example-type h5,
+.bs-example-type h6 {
+    margin: 0;
+}
+
+/* Images */
+.bs-example > .img-circle,
+.bs-example > .img-rounded,
+.bs-example > .img-thumbnail {
+    margin: 5px;
+}
+
+/* Tables */
+.bs-example > .table-responsive > .table {
+    background-color: #fff;
+}
+
+/* Buttons */
+.bs-example > .btn,
+.bs-example > .btn-group {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.bs-example > .btn-toolbar + .btn-toolbar {
+    margin-top: 10px;
+}
+
+/* Forms */
+.bs-example-control-sizing select,
+.bs-example-control-sizing input[type="text"] + input[type="text"] {
+    margin-top: 10px;
+}
+.bs-example-form .input-group {
+    margin-bottom: 10px;
+}
+.bs-example > textarea.form-control {
+    resize: vertical;
+}
+
+/* List groups */
+.bs-example > .list-group {
+    max-width: 100%;
+
+}
+
+/* Navbars */
+.bs-example .navbar:last-child {
+    margin-bottom: 0;
+}
+
+
+#main-container{
+    width: 70%;
+    text-align:left;
+    margin: auto;
+    position: absolute;
+    left: 0; right: 0;
+}
+
+
+.right-label{
+    float: right;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+#footer{
+    /*position: absolute;*/
+    /*margin: auto;*/
+    left: 0;
+    right: 0;
+    top:30px;
+    text-align: center;
+    position: relative;
+    margin-top: 30px;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
+    background:lightblue;
+}
+
+.abstraction {
+    position: relative;
+    padding: 45px 15px 15px;
+    margin: 0 -15px 15px;
+    background-color: #fafafa;
+    box-shadow: inset 0 3px 6px rgba(0,0,0,.05);
+    border-color: #e5e5e5 #eee #eee;
+    border-style: solid;
+    border-width: 1px 0;
+}
+/* Echo out a label for the example */
+.abstraction:after {
+    content: "Abstraction";
+    position: absolute;
+    top:  15px;
+    left: 15px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #bbb;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.keywords {
+    position: relative;
+    padding: 45px 15px 15px;
+    margin: 0 -15px 15px;
+    background-color: #fafafa;
+    box-shadow: inset 0 3px 6px rgba(0,0,0,.05);
+    border-color: #e5e5e5 #eee #eee;
+    border-style: solid;
+    border-width: 1px 0;
+}
+/* Echo out a label for the example */
+.keywords:after {
+    content: "Keywords";
+    position: absolute;
+    top:  15px;
+    left: 15px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #bbb;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.paper-header
+{
+    font-family: "Microsoft YaHei";
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.paper-button
+{
+    margin-right: 20px;
+    height: 20px;
+    float: right;
+    right: 20px;
+    padding-left: 10px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-right: 10px;
+}
+
+.comment-title
+{
+    margin: 5;
+    line-height: 25px;
+}
+
+.comment-text{
+    margin-top: 20px;
+}
+
+.file-nav{
+    border-radius: 2px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #00e09f;
+    margin-top: 50px;
+    width: 20%;
+    padding:10px;
+    float: left;
+}
+
+.file-content{
+    border-radius: 2px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #00e09f;
+    margin-top: 50px;
+    margin-right: 0px;
+    width: 78%;
+    float: right;
+}
+
+.file-manage {
+    position: absolute;
+    padding: 45px 15px 15px;
+    margin: 0 -15px 15px;
+    background-color: #fafafa;
+    box-shadow: inset 0 3px 6px rgba(0,0,0,.05);
+    border-color: #e5e5e5 #eee #eee;
+    border-style: solid;
+    border-width: 1px 0;
+    width: 100%;
+   margin-bottom: 100px;
+}
+
+/* Echo out a label for the example */
+.file-manage:after {
+    content: "File Mangement";
+    position: absolute;
+    top:  15px;
+    left: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #bbb;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline;
+}
+
+.file-manage span{
+    padding: 10px;
+
+}
+
+.small-banner{
+    border-color: #e5e5e5 #eee #eee;
+    border-style: solid;
+    border-width: 1px 0;
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+
+
+.pop-header
+{
+    height: 20px;
+    background: #00e09f;
+}
+
+.pop-window
+{
+    border-color: #00e09f;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 2px;
+    width: 200px;
+    vertical-align: middle;
+    text-align: center;
+    overflow:hidden; display:none;
+    background-color: #ffffff;
+}
+

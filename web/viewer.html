@@ -44,7 +44,7 @@ See https://github.com/adobe-type-tools/cmap-resources
 
 <!--#if !(MOZCENTRAL || CHROME || MINIFIED)-->
     <script src="compatibility.js"></script>
-    <!--script src="../node_modules/bootstrap/dist/js/jquery-1.11.3.js"/>
+    <!--<script src="jquery-1.11.3.js"/>-->
 <!--#endif-->
 
 <!--#if !PRODUCTION-->
@@ -407,9 +407,9 @@ See https://github.com/adobe-type-tools/cmap-resources
                     </ol>
                  </div>
                      <div class="comment-area">
-                         <textarea  class="comment-textarea" type="text" name="commentarea"></textarea>
+                         <textarea  class="comment-textarea" type="text" name="commentarea" id="comment-text"></textarea>
                                              <br/>
-                         <input class="submit-input" type="submit" value="Comment" />
+                         <input class="submit-input" type="submit" value="Comment" id="submit-comment"/>
                      </div>
               </div>
 
@@ -468,6 +468,8 @@ See https://github.com/adobe-type-tools/cmap-resources
     <div id="printContainer"></div>
 <!--#if !(FIREFOX || MOZCENTRAL)-->
 <!--#include viewer-snippet-mozPrintCallback-polyfill.html-->
+
+
 <!--#endif-->
   </body>
 </html>

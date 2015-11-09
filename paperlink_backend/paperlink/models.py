@@ -22,6 +22,7 @@ class UserInfo(models.Model):
 class PaperInfo(models.Model):
     paperId = models.IntegerField()
     title = models.CharField(max_length=100)
+    abstraction = models.CharField(max_length=500)
     src = models.CharField(max_length=200)
     users = models.ManyToManyField(UserInfo)
 
@@ -30,11 +31,12 @@ class PaperInfo(models.Model):
 
 class TagInfo(models.Model):
     tagId = models.IntegerField()
+    tagContent = models.CharField(max_length=100)
     timestamp = models.DateField(default=datetime.datetime.now())
-    paper = models.ForeignKey(PaperInfo, default='IT')
+    paper = models.ForeignKey(PaperInfo, related_name="TAGS")
 
 class Comment(models.Model):
-    users = models.ForeignKey(UserInfo)
+    user = models.ForeignKey(UserInfo, related_name="MYCOMMENTS")
     timestamp = models.DateField(default=datetime.datetime.now())
     content = models.CharField(max_length=1000)
     tag = models.ForeignKey(TagInfo)
